@@ -44,7 +44,7 @@ import {
 import { cn } from "@/lib/utils";
 
 // Supported file extensions - single source of truth
-const SUPPORTED_EXTENSIONS = [
+export const SUPPORTED_EXTENSIONS = [
   ".pdf",
   ".doc",
   ".docx",

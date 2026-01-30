@@ -14,6 +14,7 @@ import {
 import { Input } from "@/components/ui/input";
 import { Label } from "@/components/ui/label";
 import { useTask } from "@/contexts/task-context";
+import { SUPPORTED_EXTENSIONS } from "@/components/knowledge-dropdown";
 
 function AdminPage() {
 	console.log("AdminPage component rendered!");
@@ -238,7 +239,7 @@ function AdminPage() {
 									id="file-input"
 									type="file"
 									onChange={(e) => setSelectedFile(e.target.files?.[0] || null)}
-									accept=".pdf,.doc,.docx,.txt,.md"
+									accept={SUPPORTED_EXTENSIONS.join(",")}
 									className="cursor-pointer"
 								/>
 							</div>
