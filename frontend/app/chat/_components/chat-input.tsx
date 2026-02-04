@@ -24,7 +24,7 @@ import { useGetAllFiltersQuery } from "../../api/queries/useGetAllFiltersQuery";
 import type { KnowledgeFilterData } from "../_types/types";
 import { FilePreview } from "./file-preview";
 import { SelectedKnowledgeFilter } from "./selected-knowledge-filter";
-import { SUPPORTED_EXTENSIONS } from "@/components/knowledge-dropdown";
+import { SUPPORTED_EXTENSIONS, SUPPORTED_FILE_TYPES } from "@/components/knowledge-dropdown";
 
 export interface ChatInputHandle {
 	focusInput: () => void;
@@ -105,7 +105,7 @@ export const ChatInput = forwardRef<ChatInputHandle, ChatInputProps>(
 		}, [allFilters, filterSearchTerm]);
 
 		const { getRootProps, getInputProps } = useDropzone({
-			accept: {SUPPORTED_EXTENSIONS.join(",")},
+			accept: SUPPORTED_FILE_TYPES,
 			maxFiles: 1,
 			disabled: !isDragging,
 			onDrop: (acceptedFiles, fileRejections) => {
