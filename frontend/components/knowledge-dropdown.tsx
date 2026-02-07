@@ -44,6 +44,7 @@ import {
 import { cn } from "@/lib/utils";
 
 // Supported file extensions - single source of truth
+// If modified, please also update the list in the documentation (openrag/docs/docs)
 export const SUPPORTED_FILE_TYPES = {
   "image/*": [".png", ".jpg", ".jpeg", ".gif", ".bmp", ".tiff", ".webp"],
   "application/pdf": [".pdf"],
