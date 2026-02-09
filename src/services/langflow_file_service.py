@@ -1,4 +1,5 @@
 from typing import Any, Dict, List, Optional
+from urllib.parse import quote
 
 from config.settings import LANGFLOW_INGEST_FLOW_ID, clients
 from utils.logging_config import get_logger
@@ -153,7 +154,7 @@ class LangflowFileService:
                 "X-Langflow-Global-Var-OWNER_NAME": str(owner_name),
                 "X-Langflow-Global-Var-OWNER_EMAIL": str(owner_email),
                 "X-Langflow-Global-Var-CONNECTOR_TYPE": str(connector_type),
-                "X-Langflow-Global-Var-FILENAME": filename,
+                "X-Langflow-Global-Var-FILENAME": quote(filename, safe=''),
                 "X-Langflow-Global-Var-MIMETYPE": mimetype,
                 "X-Langflow-Global-Var-FILESIZE": str(file_size_bytes),
                 "X-Langflow-Global-Var-SELECTED_EMBEDDING_MODEL": str(embedding_model),
